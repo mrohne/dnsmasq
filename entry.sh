@@ -41,4 +41,4 @@ if [ ! -f "$conf" ]; then
 
 fi
 
-exec dnsmasq "--conf-file=$conf" --no-daemon --no-resolv --log-facility=-
+exec dnsmasq "--conf-file=$conf" --no-daemon --no-resolv "--log-facility=${LOG_FACILITY:--}"
