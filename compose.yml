@@ -5,6 +5,7 @@ services:
     environment:
       DNS1: "1.0.0.1"
       DNS2: "1.1.1.1"
+      LOG_QUERIES: "1"
     ports:
       - ${HOSTIP}:53:53/udp
       - ${HOSTIP}:53:53/tcp
