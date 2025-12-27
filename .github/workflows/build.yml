@@ -12,7 +12,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  # This will result in an image named ghcr.io/your-username/dnsmasq
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -54,7 +53,6 @@ jobs:
         with:
           context: .
           push: true
-          # Note: Added 'linux/amd64' and 'linux/arm64' as common targets
           platforms: linux/amd64,linux/arm64
-          tags: ${{ id.meta.outputs.tags }}
-          labels: ${{ id.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
